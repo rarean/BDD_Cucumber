@@ -8,12 +8,12 @@ import org.openqa.selenium.support.PageFactory;
 import utils.ConfigFileReader;
 import utils.FileReaderManager;
 
-public class LoginPage extends PageObject {
+public class MainPage extends PageObject {
 
   private static ConfigFileReader reader = FileReaderManager.getInstance().getConfigReader();
   private static String url;
 
-  public LoginPage(RemoteWebDriver driver) {
+  public MainPage(RemoteWebDriver driver) {
     super(driver);
     String maybeUrl = reader.getProperty("url");
     if (maybeUrl != null){

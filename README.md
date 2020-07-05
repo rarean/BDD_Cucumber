@@ -6,4 +6,7 @@ Leverage Cucumber and Java-a11y for 508 and Accessibility testing
 # TL;DR
 * clone the repo
 * change the URL to test in `config.properties`
-* run tests with class `RunCukesTest`
+* run tests with class `RunCukesTest` using maven
+```bash
+mvn clean test
+```
