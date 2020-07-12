@@ -12,14 +12,14 @@ public class CukesTestContext {
 
   private CukesWebDriverManager webDriverManager;
   private CukesPageObjectManager cukesPageObjectManager;
-  private AccessibilityManager accessibilityManager;
+  //private AccessibilityManager accessibilityManager;
 
 
   public CukesTestContext(){
 
     webDriverManager = new CukesWebDriverManager();
     cukesPageObjectManager = new CukesPageObjectManager(webDriverManager.getDriver());
-    accessibilityManager = new AccessibilityManager();
+    //accessibilityManager = new AccessibilityManager();
 
   }
 
@@ -30,9 +30,9 @@ public class CukesTestContext {
   public CukesPageObjectManager getCukesPageObjectManager(){
     return cukesPageObjectManager;
   }
-  public AccessibilityManager getAccessibilityManager() {
-    return accessibilityManager;
-  }
+  //public AccessibilityManager getAccessibilityManager() {
+  //  return accessibilityManager;
+  //}
 
 
 }

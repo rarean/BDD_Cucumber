@@ -15,7 +15,7 @@ public class MainPage extends PageObject {
 
   public MainPage(RemoteWebDriver driver) {
     super(driver);
-    String maybeUrl = reader.getProperty("url");
+    String maybeUrl = reader.getProperty("baseUrl");
     if (maybeUrl != null){
       url = maybeUrl;
     } else {
@@ -27,8 +27,8 @@ public class MainPage extends PageObject {
     PageFactory.initElements(driver, this);
   }
 
-  @FindBy(how = How.ID, using = "")
-  public WebElement search;
+  @FindBy(how = How.CLASS_NAME, using = "main-header")
+  public WebElement mainHeader;
 
   public String getTitle(){
     return driver.getTitle();

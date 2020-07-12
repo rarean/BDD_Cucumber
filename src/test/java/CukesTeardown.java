@@ -9,7 +9,7 @@ public class CukesTeardown implements EventListener {
 
   private EventHandler<TestRunFinished> teardown = event -> {
     CukesWebDriverManager.closeDriver();
-    AccessibilityManager.getInstance().generateHtmlReport();
+    //AccessibilityManager.getInstance().generateHtmlReport();
   };
 
   @Override

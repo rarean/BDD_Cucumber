@@ -9,7 +9,6 @@ public abstract class PageObject {
 
   protected final RemoteWebDriver driver;
 
-
   protected PageObject(RemoteWebDriver driver) {
     this.driver = driver;
   }

@@ -1,6 +1,12 @@
-@fast
-Feature: As a User I want to navigate to Page, so I can view it
-  Scenario: view URL from properties
-    Given I have a configured Cucumber
-    When I run it in my IDE
-    Then I will be able to run steps
+
+@login
+Feature: As a user I want to login to my account, so I can track my items
+  Scenario: Register as new user
+    Given I am on the longin page
+    When I click new user button
+    Then I am directed to the registration page
+
+  #  Given I am on the registration page
+  #  When I enter my details
+  #  And click the register button
+  #  Then I am not able to register without recapta

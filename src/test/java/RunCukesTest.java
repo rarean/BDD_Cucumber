@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
     features = {"src/test/resources"},
-    plugin = {"html:target/reports/cucumberReport", "CukesTeardown"}
-    //tags = { @fast } //see docs https://cucumber.io/docs/cucumber/api/#tags
+    plugin = {"html:target/reports/cucumberReport", "CukesTeardown"},
+    tags = { "@fast,@login" } //see docs https://cucumber.io/docs/cucumber/api/#tags
 )
 public class RunCukesTest {
 

@@ -30,8 +30,8 @@ public class CukesWebDriverManager {
 
       switch (reader.getProperty("webdriver.type")) {
         case "CHROME": {
-          //io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
-          System.setProperty("webdriver.chrome.driver", "/mnt/c/selenium/chromedriver_win32/chromedriver.exe");
+          io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
+          //System.setProperty("webdriver.chrome.driver", "/mnt/c/selenium/chromedriver_win32/chromedriver.exe");
           ChromeOptions options = new ChromeOptions();
           //options.addArguments("enable-automation");
           options.addArguments("--start-maximized");

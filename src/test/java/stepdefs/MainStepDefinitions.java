@@ -12,22 +12,22 @@ import pages.MainPage;
 public class MainStepDefinitions {
 
   RemoteWebDriver driver;
-  private MainPage loginPage;
+  private MainPage mainPage;
   private CukesTestContext testContext;
-  private AccessibilityRunner a11yRunner;
+  //private AccessibilityRunner a11yRunner;
 
   public MainStepDefinitions(CukesTestContext context) {
     testContext = context;
-    loginPage = testContext.getCukesPageObjectManager().getLoginPage();
-    a11yRunner = testContext.getAccessibilityManager().getRunner();
+    mainPage = testContext.getCukesPageObjectManager().getMainPage();
+    //a11yRunner = testContext.getAccessibilityManager().getRunner();
   }
 
   @Given("^I have a configured Cucumber")
   public void i_have_a_configured_Cucumber() throws Exception {
     // Write code here that turns the phrase above into concrete actions
     //throw new PendingException();
-    Assert.assertNotEquals("not same","hello", loginPage.getTitle());
-    a11yRunner.execute();
+    Assert.assertNotEquals("not same","hello", mainPage.getTitle());
+    //a11yRunner.execute();
   }
 
   @When("^I run it in my IDE$")
