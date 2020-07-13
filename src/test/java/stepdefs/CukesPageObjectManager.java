@@ -1,6 +1,5 @@
 package stepdefs;
 
-import org.junit.AfterClass;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import pages.LoginPage;
 import pages.MainPage;
@@ -8,13 +7,12 @@ import pages.RegisterPage;
 
 public class CukesPageObjectManager {
 
-  private RemoteWebDriver driver;
+  private final RemoteWebDriver driver;
   private MainPage mainPage;
   private LoginPage loginPage;
   private RegisterPage registerPage;
 
-
-  public CukesPageObjectManager(RemoteWebDriver driver) {
+  public CukesPageObjectManager(final RemoteWebDriver driver) {
     this.driver = driver;
   }
 

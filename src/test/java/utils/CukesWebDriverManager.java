@@ -1,7 +1,6 @@
 package utils;
 
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,10 +14,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class CukesWebDriverManager {
   private static RemoteWebDriver driver = null;
-  private static ConfigFileReader reader;
-
-  public CukesWebDriverManager(){
-    reader = FileReaderManager.getInstance().getConfigReader();
+  
+  public CukesWebDriverManager() {
+    FileReaderManager.getInstance().getConfigReader();
   }
 
   public static RemoteWebDriver createDriver() {
@@ -28,7 +26,7 @@ public class CukesWebDriverManager {
       final LoggingPreferences logPrefs = new LoggingPreferences();
       logPrefs.enable(LogType.BROWSER, Level.ALL);
 
-      switch (reader.getProperty("webdriver.type")) {
+      switch (ConfigFileReader.getProperty("webdriver.type")) {
         case "CHROME": {
           io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
           //System.setProperty("webdriver.chrome.driver", "/mnt/c/selenium/chromedriver_win32/chromedriver.exe");
@@ -48,6 +46,7 @@ public class CukesWebDriverManager {
           break;
         }
         case "FIREFOX": {
+          //setup for bonigarcia WebDriverManager
           FirefoxDriverManager.firefoxdriver().setup();
           capabilities.setBrowserName("firefox");
           capabilities.setCapability("acceptInsecureCerts", true);
@@ -63,7 +62,7 @@ public class CukesWebDriverManager {
         }
         default: {
           System.err.println(
-              "the Web driver was not initialized; type: " + reader.getProperty("webdriver.type"));
+              "the Web driver was not initialized; type: " + ConfigFileReader.getProperty("webdriver.type"));
           break;
         }
       }

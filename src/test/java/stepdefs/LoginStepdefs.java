@@ -3,7 +3,6 @@ package stepdefs;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.sridharbandi.AccessibilityRunner;
 import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import pages.LoginPage;
@@ -15,10 +14,11 @@ public class LoginStepdefs {
     private final MainPage mainPage;
     private final LoginPage loginPage;
     private final CukesTestContext testContext;
-    //private final AccessibilityRunner a11yRunner;
+    // private final AccessibilityRunner a11yRunner;
 
     public LoginStepdefs(CukesTestContext context) {
         testContext = context;
+        testContext.getCukesPageObjectManager().getMainPage();
         mainPage = testContext.getCukesPageObjectManager().getMainPage();
         loginPage = testContext.getCukesPageObjectManager().getLoginPage();
         //a11yRunner = testContext.getAccessibilityManager().getRunner();
@@ -28,8 +28,8 @@ public class LoginStepdefs {
     public void IamOnTheLoginPage() throws Exception {
         // Write code here that turns the phrase above into concrete actions
         //throw new PendingException();
-        Assert.assertEquals("Login", loginPage.mainHeader.getText());
-        Assert.assertNotEquals("not same","hello", loginPage.getTitle());
+        Assert.assertEquals("login", loginPage.mainHeader.getText());
+        Assert.assertNotEquals("not same","hello", mainPage.getTitle());
         //a11yRunner.execute();
     }
 

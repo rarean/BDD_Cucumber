@@ -6,16 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import utils.ConfigFileReader;
-import utils.FileReaderManager;
 
 public class MainPage extends PageObject {
 
-  private static ConfigFileReader reader = FileReaderManager.getInstance().getConfigReader();
   private static String url;
 
-  public MainPage(RemoteWebDriver driver) {
+  public MainPage(final RemoteWebDriver driver) {
     super(driver);
-    String maybeUrl = reader.getProperty("baseUrl");
+    final String maybeUrl = ConfigFileReader.getProperty("baseUrl");
     if (maybeUrl != null){
       url = maybeUrl;
     } else {
