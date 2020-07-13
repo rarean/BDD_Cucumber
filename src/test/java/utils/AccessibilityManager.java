@@ -8,13 +8,11 @@ import static io.github.sridharbandi.util.Standard.WCAG2AAA;
 import io.github.sridharbandi.Accessibility;
 import io.github.sridharbandi.AccessibilityRunner;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class AccessibilityManager {
 
   private static WebDriver webDriver;
   private static AccessibilityRunner accessibilityRunner;
-  private static ConfigFileReader reader = FileReaderManager.getInstance().getConfigReader();
   private static String accessibilityStandard;
 
 
@@ -34,7 +32,7 @@ public class AccessibilityManager {
   }
 
   private void setAccStandard(){
-    String stndrd = reader.getProperty("a11y.standard");
+    String stndrd = ConfigFileReader.getProperty("a11y.standard");
 
     switch (stndrd){
       case "SECTION508" : {
@@ -63,7 +61,7 @@ public class AccessibilityManager {
   }
 
   private void setAccessibilityPath(){
-    Accessibility.REPORT_PATH = reader.getProperty("a11y.reports");
+    Accessibility.REPORT_PATH = ConfigFileReader.getProperty("a11y.reports");
   }
 
 }

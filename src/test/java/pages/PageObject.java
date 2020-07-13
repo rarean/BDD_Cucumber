@@ -1,3 +1,6 @@
+/**
+Main abstract PageObject
+**/
 package pages;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -9,6 +12,5 @@ public abstract class PageObject {
   protected PageObject(RemoteWebDriver driver) {
     this.driver = driver;
   }
-
 
 }

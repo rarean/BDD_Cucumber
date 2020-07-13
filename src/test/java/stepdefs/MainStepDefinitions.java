@@ -1,33 +1,31 @@
 package stepdefs;
 
-import cucumber.api.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.sridharbandi.AccessibilityRunner;
 import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import pages.LoginPage;
+import pages.MainPage;
 
-public class LoginStepDefinitions {
+public class MainStepDefinitions {
 
   RemoteWebDriver driver;
-  private LoginPage loginPage;
+  private MainPage mainPage;
   private CukesTestContext testContext;
-  private AccessibilityRunner a11yRunner;
+  //private AccessibilityRunner a11yRunner;
 
-  public LoginStepDefinitions(CukesTestContext context) {
+  public MainStepDefinitions(CukesTestContext context) {
     testContext = context;
-    loginPage = testContext.getCukesPageObjectManager().getLoginPage();
-    a11yRunner = testContext.getAccessibilityManager().getRunner();
+    mainPage = testContext.getCukesPageObjectManager().getMainPage();
+    //a11yRunner = testContext.getAccessibilityManager().getRunner();
   }
 
   @Given("^I have a configured Cucumber")
   public void i_have_a_configured_Cucumber() throws Exception {
     // Write code here that turns the phrase above into concrete actions
     //throw new PendingException();
-    Assert.assertNotEquals("not same","hello", loginPage.getTitle());
-    a11yRunner.execute();
+    Assert.assertNotEquals("not same","hello", mainPage.getTitle());
+    //a11yRunner.execute();
   }
 
   @When("^I run it in my IDE$")

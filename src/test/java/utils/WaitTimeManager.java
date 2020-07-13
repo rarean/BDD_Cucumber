@@ -8,14 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitTimeManager {
 
-  private static ConfigFileReader reader;
-
-  public WaitTimeManager(){
-    reader = FileReaderManager.getInstance().getConfigReader();
+  public WaitTimeManager() {
+    FileReaderManager.getInstance().getConfigReader();
   }
 
   public static long getImplicitlyWait() {
-    String implicitWait = reader.getProperty("implicitWait");
+    String implicitWait = ConfigFileReader.getProperty("implicitWait");
     if(implicitWait != null) {
       try{
         return Long.parseLong(implicitWait);
@@ -27,7 +25,7 @@ public class WaitTimeManager {
   }
 
   public static long getDefaultWait() {
-    String wait = reader.getProperty("defaultWait");
+    String wait = ConfigFileReader.getProperty("defaultWait");
     if(wait != null) {
       try{
         return Long.parseLong(wait);
@@ -39,7 +37,7 @@ public class WaitTimeManager {
   }
 
   public static long getShortWait() {
-    String wait = reader.getProperty("shortWait");
+    String wait = ConfigFileReader.getProperty("shortWait");
     if(wait != null) {
       try{
         return Long.parseLong(wait);
@@ -51,7 +49,7 @@ public class WaitTimeManager {
   }
 
   public static long getLongWait() {
-    String wait = reader.getProperty("longWait");
+    String wait = ConfigFileReader.getProperty("longWait");
     if(wait != null) {
       try{
         return Long.parseLong(wait);

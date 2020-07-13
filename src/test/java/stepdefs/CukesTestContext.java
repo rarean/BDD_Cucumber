@@ -1,7 +1,5 @@
 package stepdefs;
 
-import io.github.sridharbandi.AccessibilityRunner;
-import utils.AccessibilityManager;
 import utils.CukesWebDriverManager;
 
 /**
@@ -10,16 +8,16 @@ import utils.CukesWebDriverManager;
  */
 public class CukesTestContext {
 
-  private CukesWebDriverManager webDriverManager;
-  private CukesPageObjectManager cukesPageObjectManager;
-  private AccessibilityManager accessibilityManager;
+  private final CukesWebDriverManager webDriverManager;
+  private final CukesPageObjectManager cukesPageObjectManager;
+  //private AccessibilityManager accessibilityManager;
 
 
   public CukesTestContext(){
 
     webDriverManager = new CukesWebDriverManager();
-    cukesPageObjectManager = new CukesPageObjectManager(webDriverManager.getDriver());
-    accessibilityManager = new AccessibilityManager();
+    cukesPageObjectManager = new CukesPageObjectManager(CukesWebDriverManager.getDriver());
+    //accessibilityManager = new AccessibilityManager();
 
   }
 
@@ -30,9 +28,9 @@ public class CukesTestContext {
   public CukesPageObjectManager getCukesPageObjectManager(){
     return cukesPageObjectManager;
   }
-  public AccessibilityManager getAccessibilityManager() {
-    return accessibilityManager;
-  }
+  //public AccessibilityManager getAccessibilityManager() {
+  //  return accessibilityManager;
+  //}
 
 
 }
