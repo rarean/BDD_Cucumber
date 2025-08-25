@@ -32,7 +32,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <cucumber.version>4.7.4</cucumber.version>
     <selenium.version>3.141.59</selenium.version>
-    <webdrivermanager.version>3.8.1</webdrivermanager.version>
+    <webdrivermanager.version>6.1.0</webdrivermanager.version>
     <jupiter.version>5.4.0</jupiter.version>
   </properties>
 
